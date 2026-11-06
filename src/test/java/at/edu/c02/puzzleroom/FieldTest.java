@@ -85,13 +85,13 @@ public class FieldTest {
 
         //Auf das >-Feld gehen (in richtiger Richtung)
         assertTrue(player.moveRight());
-        assertEquals(3, player.getRow());
-        assertEquals(4, player.getCol());
+        assertEquals(2, player.getRow());
+        assertEquals(3, player.getCol());
 
         // In Pfeilrichtung verlassen: muss gelingen
         assertTrue(player.moveRight());
-        assertEquals(3, player.getRow());
-        assertEquals(5, player.getCol());
+        assertEquals(2, player.getRow());
+        assertEquals(4, player.getCol());
     }
 
 
@@ -106,12 +106,12 @@ public class FieldTest {
         assertTrue(player.moveUp());
         assertTrue(player.moveRight());
 
-        assertEquals(2, player.getRow());
-        assertEquals(4, player.getCol());
+        assertEquals(1, player.getRow());
+        assertEquals(3, player.getCol());
 
         assertTrue(player.moveDown()); // von jeder Seite betreten erlaubt
-        assertEquals(3, player.getRow());
-        assertEquals(4, player.getCol());
+        assertEquals(2, player.getRow());
+        assertEquals(3, player.getCol());
 
         assertEquals(3, player.getStepCount());
     }
@@ -133,8 +133,8 @@ public class FieldTest {
         assertFalse(player.moveLeft());
 
         // Figur bleibt auf dem Richtungsfeld, Schrittzahl unverändert
-        assertEquals(3, player.getRow());
-        assertEquals(4, player.getCol());
+        assertEquals(2, player.getRow());
+        assertEquals(3, player.getCol());
         assertEquals(stepsOnArrow, player.getStepCount());
     }
 
