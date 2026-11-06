@@ -75,4 +75,68 @@ public class FieldTest {
         // Game should be finished after moving right twice
         assertTrue(gameBoard.isFinished());
     }
+
+    @Test
+    public void oneWayMoveInArrowDirection() throws Exception {
+
+        GameBoard gameBoard = new GameBoardImpl();
+        new CommandLoad(new String[]{"src/test/resources/oneWay.maze"}).execute(gameBoard);
+        Player player = gameBoard.getPlayer();
+
+        //Auf das >-Feld gehen (in richtiger Richtung)
+        assertTrue(player.moveRight());
+        assertEquals(3, player.getRow());
+        assertEquals(4, player.getCol());
+
+        // In Pfeilrichtung verlassen: muss gelingen
+        assertTrue(player.moveRight());
+        assertEquals(3, player.getRow());
+        assertEquals(5, player.getCol());
+    }
+
+
+
+    @Test
+    public void enterFromAbove() throws Exception {
+
+        GameBoard gameBoard = new GameBoardImpl();
+        new CommandLoad(new String[]{"src/test/resources/oneWay.maze"}).execute(gameBoard);
+        Player player = gameBoard.getPlayer();
+
+        assertTrue(player.moveUp());
+        assertTrue(player.moveRight());
+
+        assertEquals(2, player.getRow());
+        assertEquals(4, player.getCol());
+
+        assertTrue(player.moveDown()); // von jeder Seite betreten erlaubt
+        assertEquals(3, player.getRow());
+        assertEquals(4, player.getCol());
+
+        assertEquals(3, player.getStepCount());
+    }
+
+
+
+    @Test
+    public void oneWayMoveAgainstArrowDirection() throws Exception {
+
+        GameBoard gameBoard = new GameBoardImpl();
+        new CommandLoad(new String[]{"src/test/resources/oneWay.maze"}).execute(gameBoard);
+        Player player = gameBoard.getPlayer();
+
+        //Auf das >-Feld gehen
+        assertTrue(player.moveRight());
+        int stepsOnArrow = player.getStepCount(); // Merkt sich Schrittzahl - darf sich danach nicht verändert haben
+
+        // In Pfeilrichtung verlassen: muss abgelehnt werden
+        assertFalse(player.moveLeft());
+
+        // Figur bleibt auf dem Richtungsfeld, Schrittzahl unverändert
+        assertEquals(3, player.getRow());
+        assertEquals(4, player.getCol());
+        assertEquals(stepsOnArrow, player.getStepCount());
+    }
+
+
 }
