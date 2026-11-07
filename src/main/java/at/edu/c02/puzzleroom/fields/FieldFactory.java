@@ -36,6 +36,7 @@ public class FieldFactory {
             case '>' -> new OneWayField(gameBoard, fieldName, row, col);
             case 'v' -> new OneWayField(gameBoard, fieldName, row, col);
             case '^' -> new OneWayField(gameBoard, fieldName, row, col);
+            case '@' -> new IceField(gameBoard, fieldName, row, col);
             default -> throw new PuzzleRoomInvalidFileException("Field " + fieldName + " is not a valid field");
         };
     }
