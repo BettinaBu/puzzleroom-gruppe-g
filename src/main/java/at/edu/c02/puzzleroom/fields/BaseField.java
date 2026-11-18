@@ -55,4 +55,12 @@ public abstract class BaseField implements Field {
     public char getName() {
         return name;
     }
+
+    public int getRow() {
+        return row;
+    }
+
+    public int getCol() {
+        return col;
+    }
 }

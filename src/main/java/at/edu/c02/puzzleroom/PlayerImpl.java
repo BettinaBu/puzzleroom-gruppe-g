@@ -1,6 +1,7 @@
 package at.edu.c02.puzzleroom;
 
 import at.edu.c02.puzzleroom.fields.Field;
+import at.edu.c02.puzzleroom.fields.FieldWall;
 
 public class PlayerImpl implements Player {
     private final GameBoard gameBoard;
@@ -41,7 +42,7 @@ public class PlayerImpl implements Player {
         // Get the current field and check if we can leave it
         Field currentField = gameBoard.getField(this.row, this.col);
         boolean canLeave = currentField.leaveField(direction);
-        if(!canLeave) {
+        if (!canLeave) {
             return false;
         }
 
@@ -52,10 +53,14 @@ public class PlayerImpl implements Player {
         // e.g. for teleporters, ice fields
         Field newField = gameBoard.getField(row, col);
         boolean canEnter = newField.enterField(direction);
-        if(!canEnter) {
+
+
+        if (!canEnter) {
             return false;
         }
+
         return true;
+
     }
 
     public void walkStep() {
@@ -65,7 +70,7 @@ public class PlayerImpl implements Player {
     public void walkSteps(int amount) {
         steps += amount;
         // Negative step counts are not allowed, even when walking over a bonus field
-        if(steps < 0) {
+        if (steps < 0) {
             steps = 0;
         }
     }
@@ -81,4 +86,6 @@ public class PlayerImpl implements Player {
     public int getCol() {
         return this.col;
     }
+
+
 }
