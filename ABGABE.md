@@ -29,20 +29,24 @@ Ergänzt eine Zeile pro Person. Verlinkt jeweils ein selbst erstelltes Issue und
 | Aufgabe | Status | Neue Testfälle und erwartete Ergebnisse | Review-Link |
 | --- | --- | --- | --- |
 | A · OneWay | gemerged | … | … |
-| B · Eis | … | … | … |
+| B · Eis | gemerged | … | … |
 | C · fastmove | … | … | … |
 
 ## Zusammenarbeit
 
-Wie habt ihr die Arbeit aufgeteilt, die Rollen gewechselt und Feedback aus dem anderen Arbeitsteam eingearbeitet?
+Unsere Arbeitsteams haben sich in dieser Aufgabe neu verteilt, da Abby in der Einheit leider krank war.
+Im Vergleich zur Calculator-Implementierung hat sich die Abstimmung zwischen den Teams eindeutig verbessert.
+Beispielsweise hat Arbeitsteam 1 das OneWay implementiert und Arbeitsteam 2 hat diesmal frühzeitig nach dem OneWay-Design gefragt, um die Tests unmittelbar an die tatsächliche Logik angepasst implementieren zu können.
 
-Aufteilung je Aufgabe:
-Wechsel der Implementierungs- und Testgruppe nach Aufgabe 2.
+Innerhalb der Gruppen haben wir versucht, regelmäßig das Coding & Pairprogramming sowie Logik- & Testimplementierung abzutauschen.
+Im Flow ist uns das nicht immer gut gelungen und manchmal haben wir dann während dem Task getauscht, was natürlich nicht optimal ist.
+
+Die größten Schwierigkeiten hatten wir bei der internen Aufgabenverteilung. Aufgrund eines Missverständnisses haben beide Gruppen unabhängig voneinander die Implementierung des Eisfelds übernommen. Aufgefallen ist die doppelte Umsetzung erst beim Erstellen des Pull Requests. Hier hat uns auf jeden Fall ein Projektmanager gefehlt, der alles koordiniert, den Überblick behält und die Aufgaben gleichmäßig verteilt.
 
 | Aufgabe | Implementierung | Tests | Commits |
 | --- | --- | --- | ---|
 | A: OneWay | Arbeitsteam 1 | Arbeitsteam 2 | [Implementation](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/3/commits)<br>[Implementation2](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/5/commits)<br>[Testcases](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/4/commits)[TestAdaption](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/7/commits)|
-| B: Eis | Arbeitsteam 1 | Arbeitsteam 2 |[Implementation]()<br>[Testcases]() |
+| B: Eis | Arbeitsteam 1 | Arbeitsteam 2 |[Implementation](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/8/commits)<br>[Testcases](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/10/commits) |
 | C: FastMove | Arbeitsteam 2 | Arbeitsteam 1 | [Implementation]()<br>[Testcases]()|
 
 Aufteilung innerhalb der Teams:
@@ -50,10 +54,10 @@ Aufteilung innerhalb der Teams:
 | --- | --- | --- | ---| 
 | A: OneWay Implementation | David | Szilard | Bettina |
 | A: OneWay Tests | Dominik | Bettina | David, Szilard |
-| B: Eis Implementation | David |  |  |
-| B: Eis Tests | Bettina |  |  |
-| C: FastMove Implementation |  |  |  |
-| C: FastMove Tests |  |  |  |
+| B: Eis Implementation | David | Szilard | Bettina, Dominik |
+| B: Eis Tests | Abby | Bettina, Dominik | David, Szilard |
+| C: FastMove Implementation | Dominik | Bettina, Abby | David Szilard |
+| C: FastMove Tests | Szilard | David | Bettina, Dominik, Abby |
 
 
 ## Offene Punkte
