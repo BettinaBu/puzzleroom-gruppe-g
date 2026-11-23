@@ -1,6 +1,7 @@
 package at.edu.c02.puzzleroom;
 
 import at.edu.c02.puzzleroom.commands.CommandLoad;
+import at.edu.c02.puzzleroom.commands.CommandMove;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -137,6 +138,37 @@ public class FieldTest {
         assertEquals(3, player.getCol());
         assertEquals(stepsOnArrow, player.getStepCount());
     }
+    @Test
+    public void iceFieldSlidesToFirstFreeFieldAfterIce() throws Exception {
+        // Innenzeile: #o@@ x#  (Spalte 0 = '#', 1 = 'o', 2 = '@', 3 = '@', 4 = ' ', 5 = 'x')
+        GameBoard gameBoard = new GameBoardImpl();
+        new CommandLoad(new String[]{"src/test/resources/iceFieldToPath.maze"}).execute(gameBoard);
+        Player player = gameBoard.getPlayer();
 
+        // Einmal "move right": Figur betritt das Eis und rutscht darueber hinweg
+        new CommandMove(new String[]{"right"}).execute(gameBoard);
+
+        // Figur stoppt auf dem ersten begehbaren Feld nach dem Eis = freies Feld direkt links vom Ziel
+        assertEquals(1, player.getRow());
+        assertEquals(4, player.getCol());
+        // Sie darf nicht bis ins Ziel weiterrutschen
+        assertFalse(gameBoard.isFinished());
+    }
+
+    @Test
+    public void iceFieldStopsOnLastIceFieldBeforeWall() throws Exception {
+        // Innenzeile: #o@@#x#  (Spalte 0 = '#', 1 = 'o', 2 = '@', 3 = '@', 4 = '#', 5 = 'x')
+        GameBoard gameBoard = new GameBoardImpl();
+        new CommandLoad(new String[]{"src/test/resources/iceFieldToWall.maze"}).execute(gameBoard);
+        Player player = gameBoard.getPlayer();
+
+        // Einmal "move right": Figur rutscht ueber das Eis bis zur Wand
+        new CommandMove(new String[]{"right"}).execute(gameBoard);
+
+        // Figur bleibt auf dem zweiten (= letzten) Eisfeld direkt vor der Wand stehen
+        assertEquals(1, player.getRow());
+        assertEquals(3, player.getCol());
+        assertFalse(gameBoard.isFinished());
+    }
 
 }
