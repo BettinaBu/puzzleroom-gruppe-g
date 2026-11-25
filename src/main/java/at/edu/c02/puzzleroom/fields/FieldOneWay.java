@@ -4,8 +4,8 @@ import at.edu.c02.puzzleroom.Direction;
 import at.edu.c02.puzzleroom.GameBoard;
 import at.edu.c02.puzzleroom.exceptions.PuzzleRoomException;
 
-public class OneWayField extends BaseField {
-    protected OneWayField(GameBoard gameBoard, char name, int row, int col) {
+public class FieldOneWay extends BaseField {
+    protected FieldOneWay(GameBoard gameBoard, char name, int row, int col) {
         super(gameBoard, name, row, col);
     }
 
