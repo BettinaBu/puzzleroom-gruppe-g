@@ -2,8 +2,6 @@
 
 **Moodle-Gruppe:** G
 
-Füllt diese Datei vor dem Release aus. Verwendet hier GitHub-Benutzernamen. Die Zuordnung zu vollständigen Namen reicht ihr in Moodle ein.
-
 GitHub-Benutzername| Name  | Arbeitsteam |
 ----------------------|----------------------|--------------------|
 BettinaBu | Bettina Bulfone      | 2                              |
@@ -18,19 +16,19 @@ Ergänzt eine Zeile pro Person. Verlinkt jeweils ein selbst erstelltes Issue und
 
 | GitHub-Benutzername | Eigener Beitrag | Eigenes Issue | Eigener PR |
 | --- | --- | --- | --- |
-|BettinaBu | [Beitrag]() | [Issue]() | [PullRequest]() |
-|Murphy57100 | [Beitrag]() | [Issue]() | [PullRequest]() |
-|dominik-stiegelbauer | [Beitrag]() | [Issue]() | [PullRequest]() |
-|DaHof93 | [Beitrag]() | [Issue]() | [PullRequest]() |
-|Szilhub| [Beitrag]() | [Issue]() | [PullRequest]() |
+|BettinaBu | Test Adaption | [Issue](https://github.com/BettinaBu/puzzleroom-gruppe-g/issues/2) | [PullRequest](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/7) |
+|Murphy57100 | Test IceField | [Issue](https://github.com/BettinaBu/puzzleroom-gruppe-g/issues/9) | [PullRequest](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/10) |
+|dominik-stiegelbauer | FastMove | [Issue](https://github.com/BettinaBu/puzzleroom-gruppe-g/issues/13) | [PullRequest](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/15) |
+|DaHof93 | IceField | [Issue](https://github.com/BettinaBu/puzzleroom-gruppe-g/issues?q=is%3Aissue+state%3Aclosed+author%3ADaHof93) | [PullRequest](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/8) |
+|Szilhub| Test FastMove | [Issue](https://github.com/BettinaBu/puzzleroom-gruppe-g/issues/14) | [PullRequest](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/16) |
 
 ## Aufgaben und Tests
 
 | Aufgabe | Status | Neue Testfälle und erwartete Ergebnisse | Review-Link |
 | --- | --- | --- | --- |
-| A · OneWay | gemerged | … | … |
-| B · Eis | gemerged | … | … |
-| C · fastmove | … | … | … |
+| A · OneWay & Test | gemerged | **`oneWayMoveInArrowDirection`**: `moveRight` liefern beide `true`. <br>**`enterFromAbove`**: `moveUp`, `moveRight`, `moveDown` liefern alle `true` <br>**`oneWayMoveAgainstArrowDirection`**: `moveRight` liefert `true`, `moveLeft` liefert `false` | Siehe [Zusammenarbeit](#zusammenarbeit) 
+| B · Eis & Test | gemerged | **Eis mit freiem Feld dahinter**: `move right` lässt die Figur über beide Eisfelder rutschen. Sie stoppt auf dem freien Feld direkt links vom Ziel. <br>**Eis mit Wand dahinter**: `move right` lässt die Figur rutschen, bis die Wand sie stoppt. Sie bleibt auf dem zweiten Eisfeld direkt vor der Wand. <br> | Siehe [Zusammenarbeit](#zusammenarbeit)|
+| C · fastmove & Test | gemerged | **`fastmovePositiveTest`**: `fastmove` mit vier gültigen Zügen (runter, rechts, rechts, hoch) <br>**`fastmoveNegativeTest`**: `fastmove` mit zweimal runter und einmal rechts. Der erste Zug gelingt, der zweite trifft die Wand und löst eine `PuzzleRoomInvalidMoveException` aus, der dritte Zug entfällt. <br>**`fastmoveInvalidArgumentTest`**: `fastmove` mit einer ungültigen Richtung -> `PuzzleRoomInvalidArgumentsException` ausgelöst. | Siehe [Zusammenarbeit](#zusammenarbeit) |
 
 ## Zusammenarbeit
 
@@ -47,7 +45,7 @@ Die größten Schwierigkeiten hatten wir bei der internen Aufgabenverteilung. Au
 | --- | --- | --- | ---|
 | A: OneWay | Arbeitsteam 1 | Arbeitsteam 2 | [Implementation](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/3/commits)<br>[Implementation2](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/5/commits)<br>[Testcases](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/4/commits)[TestAdaption](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/7/commits)|
 | B: Eis | Arbeitsteam 1 | Arbeitsteam 2 |[Implementation](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/8/commits)<br>[Testcases](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/10/commits) |
-| C: FastMove | Arbeitsteam 2 | Arbeitsteam 1 | [Implementation]()<br>[Testcases]()|
+| C: FastMove | Arbeitsteam 2 | Arbeitsteam 1 | [Implementation](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/15)<br>[Testcases](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/16)|
 
 Aufteilung innerhalb der Teams:
 | Aufgabe | Coder | Pairprogrammer | Review |
@@ -61,9 +59,6 @@ Aufteilung innerhalb der Teams:
 
 
 ## Offene Punkte
-
-Welche Abweichungen kennt ihr noch? Falls alle Erwartungen erfüllt sind, tragt „Keine bekannt“ ein.
-
-…
+Keine bekannt.
 
 Nach dem Release gebt ihr den Stand gemäß der [Abgabeanleitung](docs/ABGABE.md) in Moodle ab.
