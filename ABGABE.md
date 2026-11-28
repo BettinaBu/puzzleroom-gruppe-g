@@ -30,6 +30,9 @@ Ergänzt eine Zeile pro Person. Verlinkt jeweils ein selbst erstelltes Issue und
 | B · Eis & Test | gemerged | **Eis mit freiem Feld dahinter**: `move right` lässt die Figur über beide Eisfelder rutschen. Sie stoppt auf dem freien Feld direkt links vom Ziel. <br>**Eis mit Wand dahinter**: `move right` lässt die Figur rutschen, bis die Wand sie stoppt. Sie bleibt auf dem zweiten Eisfeld direkt vor der Wand. <br> | Siehe [Zusammenarbeit](#zusammenarbeit)|
 | C · fastmove & Test | gemerged | **`fastmovePositiveTest`**: `fastmove` mit vier gültigen Zügen (runter, rechts, rechts, hoch) <br>**`fastmoveNegativeTest`**: `fastmove` mit zweimal runter und einmal rechts. Der erste Zug gelingt, der zweite trifft die Wand und löst eine `PuzzleRoomInvalidMoveException` aus, der dritte Zug entfällt. <br>**`fastmoveInvalidArgumentTest`**: `fastmove` mit einer ungültigen Richtung -> `PuzzleRoomInvalidArgumentsException` ausgelöst. | Siehe [Zusammenarbeit](#zusammenarbeit) |
 
+## fehlschlagender CI-Test
+[hier] (https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/18)
+
 ## Zusammenarbeit
 
 Unsere Arbeitsteams haben sich in dieser Aufgabe neu verteilt, da Abby in der Einheit leider krank war.
@@ -59,6 +62,6 @@ Aufteilung innerhalb der Teams:
 
 
 ## Offene Punkte
-Keine bekannt.
+Durch Krankheit und den Ausfall von Teammitgliedern sind wir nicht mehr sicher, ob die Tabelle „Aufteilung innerhalb der Teams“ (Coder, Pairprogrammer, Review) den tatsächlichen Ablauf noch korrekt wiedergibt. Insbesondere beim Eisfeld, das beide Teams parallel umgesetzt haben, lässt sich die Zuordnung im Nachhinein nicht mehr sicher rekonstruieren.
 
 Nach dem Release gebt ihr den Stand gemäß der [Abgabeanleitung](docs/ABGABE.md) in Moodle ab.
