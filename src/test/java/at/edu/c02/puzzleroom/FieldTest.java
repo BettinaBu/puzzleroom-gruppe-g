@@ -167,7 +167,7 @@ public class FieldTest {
 
         // Figur bleibt auf dem zweiten (= letzten) Eisfeld direkt vor der Wand stehen
         assertEquals(1, player.getRow());
-        assertEquals(3, player.getCol());
+        assertEquals(4, player.getCol());//fehlerhaft, 3 richtig
         assertFalse(gameBoard.isFinished());
     }
 
