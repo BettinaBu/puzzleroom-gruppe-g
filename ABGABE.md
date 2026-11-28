@@ -31,7 +31,8 @@ Ergänzt eine Zeile pro Person. Verlinkt jeweils ein selbst erstelltes Issue und
 | C · fastmove & Test | gemerged | **`fastmovePositiveTest`**: `fastmove` mit vier gültigen Zügen (runter, rechts, rechts, hoch) <br>**`fastmoveNegativeTest`**: `fastmove` mit zweimal runter und einmal rechts. Der erste Zug gelingt, der zweite trifft die Wand und löst eine `PuzzleRoomInvalidMoveException` aus, der dritte Zug entfällt. <br>**`fastmoveInvalidArgumentTest`**: `fastmove` mit einer ungültigen Richtung -> `PuzzleRoomInvalidArgumentsException` ausgelöst. | Siehe [Zusammenarbeit](#zusammenarbeit) |
 
 ## fehlschlagender CI-Test
-[hier] (https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/18)
+[hier](https://github.com/BettinaBu/puzzleroom-gruppe-g/pull/18)
+bewusst nicht gemerged
 
 ## Zusammenarbeit
 
